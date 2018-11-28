@@ -25,14 +25,27 @@ public class DoubleLinkedList {
     }
 
     public void remove(Node node) {
+        if (node == null) {
+            return;
+        }
 
-    }
-
-    public void sort() {
-
+        if (node == header) {
+            header = node.link;
+        }
+        else {
+            node.prev.link = node.link;
+            node.link.prev = node.prev;
+        }
     }
 
     public Node search(int elem) {
+        Node pointer = header;
+        while (pointer != null) {
+            if (pointer.elem == elem) {
+                return pointer;
+            }
+            pointer = pointer.link;
+        }
         return null;
     }
 
