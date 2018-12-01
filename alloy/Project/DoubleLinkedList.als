@@ -23,5 +23,5 @@ pred RepOk() {
   all n1, n2: Node | n2.prev = n1 iff n1.link = n2
 }
 
-run RepOk for 3
+run RepOk for 16
 

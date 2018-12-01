@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<alloy>
+<view useOriginalAtomNames="yes">
+
+<defaultnode/>
+<defaultedge/>
+
+<node shape="Box" color="Yellow">
+  <type name="Node"/>
+</node>
+<node shape="Ellipse" color="Green">
+  <type name="Object"/>
+</node>
+<node visible="no">
+  <type name="Int"/>
+</node>
+<node shape="Hexagon" color="Blue">
+  <type name="SearchTree"/>
+</node>
+
+<edge visible="no" merge="no" attribute="yes">
+  <relation name="size">
+      <type name="SearchTree"/>
+      <type name="Int"/>
+  </relation>
+</edge>
+<edge visible="no" merge="no" attribute="yes">
+  <relation name="info">
+      <type name="Node"/>
+      <type name="Int"/>
+  </relation>
+</edge>
+<edge visible="no" merge="no" attribute="yes">
+  <relation name="info">
+      <type name="Node"/>
+      <type name="Int"/>
+  </relation>
+</edge>
+<edge visible="no" merge="no" attribute="yes">
+  <relation name="info">
+      <type name="Node"/>
+      <type name="Int"/>
+  </relation>
+</edge>
+
+</view>
+</alloy>

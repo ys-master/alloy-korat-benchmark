@@ -1,10 +1,32 @@
 package DoubleLinkedList;
 
+import korat.finitization.IFinitization;
+import korat.finitization.IIntSet;
+import korat.finitization.IObjSet;
+import korat.finitization.impl.FinitizationFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class DoubleLinkedList {
+    public static class Node {
+        public Node prev = null, link = null;
+        public int elem;
+
+        public Node(int value) {
+            elem = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "elem=" + elem +
+                    '}';
+        }
+    }
+
     public Node header;
+    public int size = 0;
 
     public void add(Node newNode) {
         if (newNode == null) {
@@ -13,6 +35,7 @@ public class DoubleLinkedList {
 
         if (header == null) {
             header = newNode;
+            size += 1;
         }
         else {
             Node currNode = header;
@@ -21,6 +44,7 @@ public class DoubleLinkedList {
             }
             currNode.link = newNode;
             newNode.prev = currNode;
+            size += 1;
         }
     }
 
@@ -31,10 +55,12 @@ public class DoubleLinkedList {
 
         if (node == header) {
             header = node.link;
+            size -= 1;
         }
         else {
             node.prev.link = node.link;
             node.link.prev = node.prev;
+            size -= 1;
         }
     }
 
@@ -49,7 +75,7 @@ public class DoubleLinkedList {
         return null;
     }
 
-    public boolean repOk() {
+    public boolean repOK() {
         // The list has no directed cycle along link
         Node curr_node = header;
         List<Node> visited = new ArrayList<>();
@@ -93,5 +119,21 @@ public class DoubleLinkedList {
         }
 
         return stringBuilder.toString();
+    }
+
+    public static IFinitization finDoubleLinkedList(int nodesNum,
+                                                    int values,
+                                                    int minSize,
+                                                    int maxSize) {
+        IFinitization f = FinitizationFactory.create(DoubleLinkedList.class);
+        IObjSet nodes = f.createObjSet(Node.class, nodesNum, true);
+        IIntSet intValues = f.createIntSet(values);
+        IIntSet sizes = f.createIntSet(minSize, maxSize);
+        f.set("header", nodes);
+        f.set("Node.prev", nodes);
+        f.set("Node.link", nodes);
+        f.set("Node.elem", intValues);
+        f.set("size", sizes);
+        return f;
     }
 }

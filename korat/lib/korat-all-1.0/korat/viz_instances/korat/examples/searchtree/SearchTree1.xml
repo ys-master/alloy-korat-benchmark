@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<alloy>
+<instance filename="" command="SearchTree">
+
+  <sig name="Node" extends="Object">
+    <atom name="Node0"/>
+    <atom name="Node1"/>
+    <atom name="Node2"/>
+  </sig>
+  <sig name="Object" extends="univ">
+    <atom name="SearchTree0"/>
+    <atom name="Node0"/>
+    <atom name="Node1"/>
+    <atom name="Node2"/>
+  </sig>
+  <sig name="Int" extends="univ">
+    <atom name="3"/>
+    <atom name="0"/>
+    <atom name="2"/>
+    <atom name="1"/>
+  </sig>
+  <sig name="SearchTree" extends="Object">
+    <atom name="SearchTree0"/>
+  </sig>
+
+  <field name="root">
+    <type>
+      <sig name="SearchTree"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="SearchTree0"/>
+      <atom name="Node0"/>
+    </tuple>
+  </field>
+  <field name="size">
+    <type>
+      <sig name="SearchTree"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="SearchTree0"/>
+      <atom name="3"/>
+    </tuple>
+  </field>
+  <field name="right">
+    <type>
+      <sig name="Node"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="Node0"/>
+      <atom name="Node1"/>
+    </tuple>
+  </field>
+  <field name="info">
+    <type>
+      <sig name="Node"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="Node0"/>
+      <atom name="0"/>
+    </tuple>
+  </field>
+  <field name="left">
+    <type>
+      <sig name="Node"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="Node1"/>
+      <atom name="Node2"/>
+    </tuple>
+  </field>
+  <field name="info">
+    <type>
+      <sig name="Node"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="Node1"/>
+      <atom name="2"/>
+    </tuple>
+  </field>
+  <field name="info">
+    <type>
+      <sig name="Node"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="Node2"/>
+      <atom name="1"/>
+    </tuple>
+  </field>
+
+</instance>
+</alloy>
