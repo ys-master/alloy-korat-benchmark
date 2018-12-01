@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<alloy>
+<instance filename="" command="BinaryTree">
+
+  <sig name="Node" extends="Object">
+    <atom name="Node0"/>
+    <atom name="Node1"/>
+    <atom name="Node2"/>
+  </sig>
+  <sig name="BinaryTree" extends="Object">
+    <atom name="BinaryTree0"/>
+  </sig>
+  <sig name="Object" extends="univ">
+    <atom name="BinaryTree0"/>
+    <atom name="Node0"/>
+    <atom name="Node1"/>
+    <atom name="Node2"/>
+  </sig>
+  <sig name="Int" extends="univ">
+    <atom name="3"/>
+  </sig>
+
+  <field name="root">
+    <type>
+      <sig name="BinaryTree"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="BinaryTree0"/>
+      <atom name="Node0"/>
+    </tuple>
+  </field>
+  <field name="size">
+    <type>
+      <sig name="BinaryTree"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="BinaryTree0"/>
+      <atom name="3"/>
+    </tuple>
+  </field>
+  <field name="left">
+    <type>
+      <sig name="Node"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="Node0"/>
+      <atom name="Node1"/>
+    </tuple>
+  </field>
+  <field name="right">
+    <type>
+      <sig name="Node"/>
+      <sig name="Node"/>
+    </type>
+    <tuple>
+      <atom name="Node1"/>
+      <atom name="Node2"/>
+    </tuple>
+  </field>
+
+</instance>
+</alloy>
