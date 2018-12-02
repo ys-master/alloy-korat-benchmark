@@ -1,4 +1,4 @@
-package korat.examples.HA;
+package HeapArray;
 
 import korat.finitization.IArraySet;
 import korat.finitization.IFinitization;

@@ -1,4 +1,4 @@
-package DoubleLinkedList;
+package DoublyLinkedList;
 
 import korat.finitization.IFinitization;
 import korat.finitization.IIntSet;
@@ -8,7 +8,7 @@ import korat.finitization.impl.FinitizationFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoubleLinkedList {
+public class DoublyLinkedList {
     public static class Node {
         public Node prev = null, link = null;
         public int elem;
@@ -78,7 +78,7 @@ public class DoubleLinkedList {
     public boolean repOK() {
         // The list has no directed cycle along link
         Node curr_node = header;
-        List<Node> visited = new ArrayList<>();
+        List<Node> visited = new ArrayList<Node>();
         while (curr_node != null) {
             if (visited.contains(curr_node)) {
                 return false;
@@ -121,11 +121,15 @@ public class DoubleLinkedList {
         return stringBuilder.toString();
     }
 
-    public static IFinitization finDoubleLinkedList(int nodesNum,
+    public static IFinitization finDoublyLinkedList(int size) {
+        return finDoublyLinkedList(size, 1, size, size);
+    }
+
+    public static IFinitization finDoublyLinkedList(int nodesNum,
                                                     int values,
                                                     int minSize,
                                                     int maxSize) {
-        IFinitization f = FinitizationFactory.create(DoubleLinkedList.class);
+        IFinitization f = FinitizationFactory.create(DoublyLinkedList.class);
         IObjSet nodes = f.createObjSet(Node.class, nodesNum, true);
         IIntSet intValues = f.createIntSet(values);
         IIntSet sizes = f.createIntSet(minSize, maxSize);

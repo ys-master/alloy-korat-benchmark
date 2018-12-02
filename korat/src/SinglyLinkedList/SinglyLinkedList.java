@@ -1,4 +1,4 @@
-package korat.examples.LL;
+package SinglyLinkedList;
 
 import java.util.Set;
 

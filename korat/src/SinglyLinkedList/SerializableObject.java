@@ -1,4 +1,4 @@
-package korat.examples.LL;
+package SinglyLinkedList;
 
 public class SerializableObject {
 
